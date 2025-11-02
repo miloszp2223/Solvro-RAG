@@ -1,0 +1,6 @@
+langchain-community
+langchain-core
+faiss-cpu
+sentence-transformers
+fastmcp
+llama-cpp-python
