@@ -91,4 +91,4 @@ cocktail_info
 
 - Python 3.10+
 - Zależności z requirements.txt
-- Model LLM kompatybilny z MCP (Llama 3.x Instruct GGUF Q4_K_M)
+- Model LLM kompatybilny z MCP (na przykład Llama 3.x Instruct GGUF Q4_K_M)
