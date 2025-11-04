@@ -49,12 +49,12 @@ def build_index():
 db = build_index()
 
 # Suggest cocktail tool
-def suggest_cocktail(ingredients_str: str):
+def suggest_cocktail(keywords_str: str):
     # Convert string into a list
-    ingredients = [i.strip() for i in ingredients_str.replace(" and ", ",").split(",")]
+    keywords = [i.strip() for i in keywords_str.replace(" and ", ",").split(",")]
 
     # Create query string for similarity search
-    query = ", ".join(ingredients)
+    query = " ".join(keywords)
     docs = db.similarity_search(query, k=3)
 
     if not docs:

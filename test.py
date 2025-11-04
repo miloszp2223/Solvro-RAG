@@ -22,8 +22,14 @@ def LLM_info_test(cocktail_name: str):
     return response['choices'][0]['text'].strip()
 
 
-def LLM_suggestion_test(ingredients: str):
-    result = suggest_cocktail(ingredients)
+def LLM_suggestion_test(ingredients: str = "", tags: str = "") -> str:
+    if (tags == ""):
+        input = ingredients
+    elif(ingredients == ""):
+        input = tags
+    else:
+        input = ingredients + ", " + tags
+    result = suggest_cocktail(input)
     #print(result)
 
     prompt = f"""You are a cocktail expert.
@@ -52,6 +58,8 @@ if __name__ == "__main__":
     print("\n-----Nowy prompt----\n")
     print(LLM_suggestion_test("gin, tonic"))
     print("\n-----Nowy prompt----\n")
-    print(LLM_suggestion_test("rum, egg whites"))
+    print(LLM_suggestion_test("rum, coke", "sweet"))
+    print("\n-----Nowy prompt----\n")
+    print(LLM_suggestion_test("rum", "citrusy, alcoholic"))
     print("\n-----Nowy prompt----\n")
     print(LLM_info_test("Mojito"))
